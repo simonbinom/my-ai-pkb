@@ -1,6 +1,6 @@
 import streamlit as st
-from app.rag import ask_question
-from app.embedder import index_notes
+from rag import ask_question
+from embedder import index_notes
 
 st.title("Deine AI-Wissensdatenbank")
 if st.button("Re-Indexiere Notizen"):

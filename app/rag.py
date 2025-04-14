@@ -1,14 +1,13 @@
-from langchain.llms import Ollama
+from langchain_community.llms import Ollama
 from sentence_transformers import SentenceTransformer
 import chromadb
-import numpy as np
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
-client = chromadb.PersistentClient("./embeddings")
-collection = client.get_collection("notes")
+client = chromadb.PersistentClient(path="./embeddings")
 llm = Ollama(model="mistral")
 
 def ask_question(query):
+    collection = client.get_or_create_collection("notes")  # robust!
     embedding = model.encode(query)
     results = collection.query(query_embeddings=[embedding], n_results=3)
     context = "\n".join(results["documents"][0])
