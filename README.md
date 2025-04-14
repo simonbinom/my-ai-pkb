@@ -1,31 +1,31 @@
-# 🧠 My AI PKB – Lokale AI-gestützte Wissensdatenbank
+# 🧠 My AI PKB – Local AI-Powered Knowledge Base
 
-Dies ist ein leichtgewichtiges, vollständig lokales System zur Verwaltung deines persönlichen Wissens mit Unterstützung durch ein KI-Sprachmodell. Es kombiniert Markdown-Dateien, Embeddings, ein lokales LLM und eine Weboberfläche zur semantischen Suche und Interaktion.
+This is a lightweight, fully local system for managing your personal knowledge with the support of an AI language model. It combines Markdown files, embeddings, a local LLM, and a web interface for semantic search and interaction.
 
 ---
 
 ## 🚀 Features
 
-- 📝 Speicherung in Markdown-Dateien
-- 📚 Embedding mit Sentence Transformers
-- 🔍 Semantische Suche mit Chroma DB
-- 🧠 LLM-Integration über Mistral 7B via Ollama
-- 🗣️ Sprach-Eingabe mit Whisper (optional)
-- 🖥️ Web-Frontend mit Streamlit
-- 🔌 RAG-Integration mit LangChain
+- 📝 Storage in Markdown files  
+- 📚 Embedding with Sentence Transformers  
+- 🔍 Semantic search using Chroma DB  
+- 🧠 LLM integration via Mistral 7B with Ollama  
+- 🗣️ Voice input using Whisper (optional)  
+- 🖥️ Web frontend with Streamlit  
+- 🔌 RAG integration via LangChain  
 
 ---
 
-## 📦 Projektstruktur
+## 📦 Project Structure
 
 ```
 my-ai-pkb/
-├── data/            # Deine Markdown-Notizen
-├── embeddings/      # Chroma Vektordatenbank
+├── data/            # Your Markdown notes
+├── embeddings/      # Chroma vector database
 ├── app/
-│   ├── embedder.py      # Erstellt Embeddings aus Markdown-Dateien
-│   ├── rag.py           # Retrieval + LLM-Antwort
-│   ├── whisper_input.py # Sprachaufnahme & Transkription (optional)
+│   ├── embedder.py      # Creates embeddings from Markdown files
+│   ├── rag.py           # Retrieval + LLM response
+│   ├── whisper_input.py # Voice recording & transcription (optional)
 │   └── ui.py            # Streamlit UI
 ├── requirements.txt
 └── README.md
@@ -35,11 +35,11 @@ my-ai-pkb/
 
 ## 🛠️ Installation
 
-### 1. Voraussetzungen
+### 1. Prerequisites
 
-- Python 3.10+
-- [Ollama](https://ollama.com/) installiert und lauffähig
-- ffmpeg für Whisper (z.B. `sudo apt install ffmpeg`)
+- Python 3.10+  
+- [Ollama](https://ollama.com/) installed and running  
+- ffmpeg for Whisper (e.g., `sudo apt install ffmpeg`)  
 
 ### 2. Setup
 
@@ -51,21 +51,22 @@ pip install -r requirements.txt
 
 ---
 
-## ⚙️ Nutzung
+## ⚙️ Usage
 
-### 1. Starte das Mistral LLM via Ollama
+### 1. Start the Mistral LLM via Ollama
 
 ```bash
+ollama serve
 ollama run mistral
 ```
 
-### 2. Indexiere deine Notizen
+### 2. Index your notes
 
 ```bash
 python app/embedder.py
 ```
 
-### 3. Starte die Oberfläche
+### 3. Launch the UI
 
 ```bash
 streamlit run app/ui.py
@@ -73,31 +74,25 @@ streamlit run app/ui.py
 
 ---
 
-## 🎤 Sprachinterface (optional)
+## 🎤 Voice Interface (optional)
 
 ```bash
 python app/whisper_input.py
 ```
 
-> Nutzt Whisper zur Sprache-zu-Text-Transkription.
+> Uses Whisper for speech-to-text transcription.
 
 ---
 
-## 🔒 Datenschutz
+## 🔒 Privacy
 
-Alle Daten und Modelle laufen **lokal** – keine Cloud, kein Tracking.
+All data and models run **locally** – no cloud, no tracking.
 
 ---
 
 ## 📍 Roadmap
 
-- 🔁 Automatischer Re-Index via Git Hook
-- 🧾 YAML-Metadaten für Markdown-Dateien
-- 📄 PDF/OCR-Support
-- 🗣️ Sprach-Ausgabe mit Coqui TTS
-
----
-
-## 📬 Kontakt
-
-Erstellt als anonymes Template. Anpassbar und erweiterbar nach eigenen Bedürfnissen.
+- 🔁 Automatic re-indexing via Git hook  
+- 🧾 YAML metadata for Markdown files  
+- 📄 PDF/OCR support  
+- 🗣️ Voice output with Coqui TTS  
