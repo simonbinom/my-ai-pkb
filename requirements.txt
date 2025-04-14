@@ -1,0 +1,8 @@
+streamlit
+langchain
+sentence-transformers
+chromadb
+ollama
+openai
+python-dotenv
+whisper
