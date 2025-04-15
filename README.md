@@ -2,6 +2,8 @@
 
 This is a lightweight, fully local system for managing your personal knowledge with the support of an AI language model. It combines Markdown files, embeddings, a local LLM, and a web interface for semantic search and interaction.
 
+**This project is an early PoC, do not use in production!**
+
 ---
 
 ## 🚀 Features
